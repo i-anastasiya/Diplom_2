@@ -11,7 +11,7 @@ class TestLoginUser:
         response_created, data = create_user
         del data["name"]
         response = requests.post(Urls.LOGIN, data=data)
-        assert response.status_code == 200 and Text.TRUE in resp.text
+        assert response.status_code == 200 and Text.TRUE in response.text
     @allure.description("Логин с неверным логином и паролем")
     def test_login_wrong_password_and_login(self):
         details = TotalInformation()
